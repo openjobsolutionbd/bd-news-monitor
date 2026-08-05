@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>খবরের খাতা — কীওয়ার্ড মনিটর</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #ECE4D3;
+    --card: #FBF8F0;
+    --ink: #221E1A;
+    --ink-muted: #6E6459;
+    --rule: #C9BEA4;
+    --red: #A5342A;
+    --stamp: #3A5A48;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(ellipse at top left, rgba(255,255,255,0.4), transparent 60%),
+      var(--paper);
+    color:var(--ink);
+    font-family:'Hind Siliguri', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  header{
+    padding:2.2rem 1.25rem 1.4rem;
+    text-align:center;
+    border-bottom:3px double var(--ink);
+    margin:0 1rem;
+  }
+  header .eyebrow{
+    font-size:0.72rem;
+    letter-spacing:0.28em;
+    color:var(--ink-muted);
+    text-transform:uppercase;
+  }
+  header h1{
+    font-family:'Tiro Bangla', serif;
+    font-size:2.1rem;
+    margin:0.3rem 0 0.2rem;
+  }
+  header .sub{
+    font-size:0.85rem;
+    color:var(--ink-muted);
+  }
+  #meta{
+    max-width:640px;
+    margin:0.9rem auto 0;
+    padding:0 1.25rem;
+    font-size:0.78rem;
+    color:var(--ink-muted);
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:0.4rem;
+  }
+  main{
+    max-width:640px;
+    margin:0 auto;
+    padding:1.2rem 1rem 4rem;
+  }
+  .day-heading{
+    font-family:'Tiro Bangla', serif;
+    font-size:1.05rem;
+    color:var(--stamp);
+    margin:2.1rem 0 0.9rem;
+    display:flex;
+    align-items:center;
+    gap:0.6rem;
+  }
+  .day-heading::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:var(--rule);
+  }
+  .clip{
+    background:var(--card);
+    border:1px solid var(--rule);
+    border-radius:2px;
+    padding:1rem 1.1rem 1rem;
+    margin-bottom:0.9rem;
+    box-shadow: 2px 3px 0 rgba(34,30,26,0.05);
+    position:relative;
+  }
+  .clip:nth-child(odd){ transform: rotate(-0.35deg); }
+  .clip:nth-child(even){ transform: rotate(0.3deg); }
+  .clip-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:0.6rem;
+    margin-bottom:0.35rem;
+    font-size:0.72rem;
+    color:var(--ink-muted);
+  }
+  .source{
+    font-weight:600;
+    color:var(--stamp);
+    border:1px solid var(--stamp);
+    border-radius:3px;
+    padding:0.05rem 0.45rem;
+    white-space:nowrap;
+  }
+  .clip h2{
+    font-family:'Tiro Bangla', serif;
+    font-weight:400;
+    font-size:1.15rem;
+    line-height:1.5;
+    margin:0.15rem 0 0.55rem;
+  }
+  .clip h2 a{ color:var(--ink); text-decoration:none; }
+  .clip h2 a:hover{ text-decoration:underline; }
+  mark{
+    background:transparent;
+    color:var(--red);
+    font-weight:600;
+    text-decoration: underline wavy var(--red);
+    text-underline-offset:3px;
+    text-decoration-thickness: 1.5px;
+  }
+  .kw-row{ display:flex; flex-wrap:wrap; gap:0.4rem; }
+  .kw{
+    font-size:0.68rem;
+    color:var(--red);
+    border:1px solid var(--red);
+    border-radius:10px;
+    padding:0.05rem 0.55rem;
+  }
+  .kw-section{
+    color:var(--stamp);
+    border-color:var(--stamp);
+  }
+  .also-from{
+    font-weight:400;
+    color:var(--ink-muted);
+    font-size:0.68rem;
+  }
+  #empty, #loading{
+    text-align:center;
+    color:var(--ink-muted);
+    padding:3rem 1rem;
+    font-size:0.9rem;
+  }
+  footer{
+    text-align:center;
+    font-size:0.72rem;
+    color:var(--ink-muted);
+    padding-bottom:2rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">দৈনিক প্রযুক্তি খবর ডাইজেস্ট</div>
+  <h1>খবরের খাতা</h1>
+  <div class="sub">নির্বাচিত পত্রিকা থেকে বেছে আনা প্রযুক্তির খবর</div>
+</header>
+
+<div id="meta"></div>
+
+<main id="main">
+  <div id="loading">খবর লোড হচ্ছে…</div>
+</main>
+
+<footer>স্বয়ংক্রিয়ভাবে হালনাগাদ হয় · GitHub Actions + Cloudflare Pages</footer>
+
+<script>
+function timeAgo(iso){
+  const d = new Date(iso);
+  return d.toLocaleString('bn-BD', { day:'numeric', month:'short', hour:'2-digit', minute:'2-digit' });
+}
+function dayLabel(iso){
+  const d = new Date(iso);
+  return d.toLocaleDateString('bn-BD', { weekday:'long', day:'numeric', month:'long' });
+}
+function escapeHtml(str){
+  const div = document.createElement('div');
+  div.textContent = str;
+  return div.innerHTML;
+}
+function highlight(title, keywords){
+  // আগে পুরো টাইটেল escape করা হয়, যাতে ফিড থেকে আসা কোনো HTML/স্ক্রিপ্ট
+  // ট্যাগ পেজে এক্সিকিউট না হয় (XSS প্রতিরোধ)। তারপর নিরাপদভাবে <mark> বসানো হয়।
+  let out = escapeHtml(title);
+  keywords.forEach(kw => {
+    if(!kw) return;
+    const safeKw = escapeHtml(kw);
+    const idx = out.indexOf(safeKw);
+    if(idx === -1) return;
+    out = out.slice(0, idx) + '<mark>' + safeKw + '</mark>' + out.slice(idx + safeKw.length);
+  });
+  return out;
+}
+
+fetch('./news.json?_=' + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    const main = document.getElementById('main');
+    const meta = document.getElementById('meta');
+    const items = data.items || [];
+
+    meta.innerHTML =
+      '<span>হালনাগাদ: ' + (data.last_updated ? timeAgo(data.last_updated) : '—') + '</span>' +
+      '<span>মোট ' + items.length + 'টি খবর</span>';
+
+    if(items.length === 0){
+      main.innerHTML = '<div id="empty">এখনও কোনো মিলে যাওয়া খবর পাওয়া যায়নি। কনফিগারেশনে কীওয়ার্ড ঠিক আছে কিনা দেখুন।</div>';
+      return;
+    }
+
+    let html = '';
+    let lastDay = '';
+    items.forEach(item => {
+      const day = dayLabel(item.published);
+      if(day !== lastDay){
+        html += '<div class="day-heading">' + day + '</div>';
+        lastDay = day;
+      }
+      const tagRow = item.matched_by === 'বিভাগ'
+        ? '<span class="kw kw-section">প্রযুক্তি বিভাগ</span>'
+        : item.matched_keywords.map(k => '<span class="kw">' + escapeHtml(k) + '</span>').join('');
+      const safeSource = escapeHtml(item.source);
+      const safeLink = escapeHtml(item.link);
+      const alsoFrom = (item.also_from || []).map(escapeHtml);
+      const sourceLabel = safeSource + (alsoFrom.length ? ' <span class="also-from">+' + alsoFrom.length + ' (' + alsoFrom.join(', ') + ')</span>' : '');
+      html += '<article class="clip">' +
+        '<div class="clip-top"><span class="source">' + sourceLabel + '</span><span>' + timeAgo(item.published) + '</span></div>' +
+        '<h2><a href="' + safeLink + '" target="_blank" rel="noopener">' + highlight(item.title, item.matched_keywords) + '</a></h2>' +
+        '<div class="kw-row">' + tagRow + '</div>' +
+        '</article>';
+    });
+    main.innerHTML = html;
+  })
+  .catch(err => {
+    document.getElementById('main').innerHTML = '<div id="empty">news.json লোড করা যায়নি। ' + err + '</div>';
+  });
+</script>
+
+</body>
+</html>

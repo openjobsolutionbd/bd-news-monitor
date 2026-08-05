@@ -1,0 +1,48 @@
+{
+  "feeds": [
+    {
+      "name": "প্রথম আলো",
+      "url": "https://www.prothomalo.com/feed/"
+    },
+    {
+      "name": "জাগো নিউজ ২৪",
+      "url": "https://www.jagonews24.com/rss/rss.xml"
+    },
+    {
+      "name": "রাইজিং বিডি",
+      "url": "https://www.risingbd.com/rss/rss.xml"
+    },
+    {
+      "name": "The Daily Star",
+      "url": "https://www.thedailystar.net/frontpage/rss.xml"
+    }
+  ],
+  "_comment_tech_path_hints": "খবরের লিংকে (URL) এই অংশগুলোর কোনোটা থাকলে সেটা সরাসরি 'প্রযুক্তি বিভাগ' হিসেবে ধরে নেওয়া হবে, কীওয়ার্ড মেলানো লাগবে না।",
+  "tech_path_hints": [
+    "/technology",
+    "/tech/",
+    "/science-tech",
+    "/science-and-technology",
+    "/it/",
+    "/gadget"
+  ],
+  "_comment_keywords": "উপরের path না মিললে, টাইটেল/বিবরণে এই শব্দগুলোর যেকোনোটা থাকলে সেটাও প্রযুক্তি খবর হিসেবে যোগ হবে। ইচ্ছেমতো শব্দ যোগ/বাদ দিতে পারবেন।",
+  "keywords": [
+    "প্রযুক্তি",
+    "সফটওয়্যার",
+    "অ্যাপ",
+    "ইন্টারনেট",
+    "এআই",
+    "কৃত্রিম বুদ্ধিমত্তা",
+    "স্মার্টফোন",
+    "স্টার্টআপ",
+    "সাইবার",
+    "রোবট",
+    "গুগল",
+    "মেটা",
+    "ফেসবুক",
+    "চ্যাটজিপিটি"
+  ],
+  "max_items_per_run": 300,
+  "retain_days": 14
+}

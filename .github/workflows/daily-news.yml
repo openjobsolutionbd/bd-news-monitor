@@ -1,0 +1,39 @@
+name: Daily News Fetch
+
+on:
+  schedule:
+    # দিনে দুইবার: UTC 06:00 (বাংলাদেশ সময় বেলা ১২টা) ও UTC 14:00 (বাংলাদেশ সময় রাত ৮টা)
+    # RSS ফিডে সাধারণত শুধু সাম্প্রতিক ২০-৫০টা আইটেম থাকে, তাই একবারের বেশি চেক করলে
+    # দুই রানের মধ্যে প্রকাশিত খবর ফিড থেকে হারিয়ে যাওয়ার ঝুঁকি কমে।
+    - cron: "0 6 * * *"
+    - cron: "0 14 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: রিপো চেকআউট
+        uses: actions/checkout@v4
+
+      - name: পাইথন সেটআপ
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: ডিপেন্ডেন্সি ইনস্টল
+        run: pip install -r requirements.txt
+
+      - name: নিউজ ফেচ করা
+        run: python fetch_news.py
+
+      - name: পরিবর্তন কমিট করা
+        run: |
+          git config user.name "news-bot"
+          git config user.email "news-bot@users.noreply.github.com"
+          git add public/news.json
+          git diff --cached --quiet && echo "নতুন কিছু নেই" || git commit -m "chore: daily news update $(date -u +%Y-%m-%d)"
+          git push

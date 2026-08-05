@@ -137,6 +137,37 @@ def fetch_feed_items(feed_conf, path_hints, keywords):
     return items
 
 
+def prune_stale_only_path_items(existing, feeds):
+    """
+    কোনো ফিডে only_path_contains যোগ/পরিবর্তন করা হলে, config বদলানোর আগে
+    সংরক্ষিত হওয়া সেই ফিডের পুরনো আইটেমগুলো (যেগুলো তখনকার কীওয়ার্ড/সাধারণ
+    path_hints নিয়মে ঢুকেছিল) news.json-এ retain_days পার না হওয়া পর্যন্ত
+    থেকে যায়, যদিও এখনকার নিয়মে সেগুলো আর গ্রহণযোগ্য না। এই ফাংশন সেই
+    পুরনো আইটেমগুলো এখনকার only_path_contains নিয়ম দিয়ে যাচাই করে বাদ দেয়।
+
+    শুধুমাত্র যে ফিডগুলোর কনফিগে বর্তমানে only_path_contains আছে, সেই
+    ফিডগুলোর আইটেমই এই যাচাইয়ের আওতায় পড়ে -- অন্য ফিডের পুরনো ডেটা
+    অপরিবর্তিত থাকে।
+    """
+    only_path_by_source = {
+        feed_conf["name"]: feed_conf["only_path_contains"]
+        for feed_conf in feeds
+        if feed_conf.get("only_path_contains")
+    }
+    if not only_path_by_source:
+        return existing, 0
+
+    kept = []
+    removed_count = 0
+    for item in existing:
+        only_paths = only_path_by_source.get(item.get("source"))
+        if only_paths is not None and not is_tech_by_path(item.get("link", ""), only_paths):
+            removed_count += 1
+            continue
+        kept.append(item)
+    return kept, removed_count
+
+
 def main():
     config = load_config()
     keywords = config["keywords"]
@@ -147,6 +178,11 @@ def main():
     existing = load_existing_news()
     for item in existing:
         item.setdefault("also_from", [])
+
+    existing, pruned_count = prune_stale_only_path_items(existing, config["feeds"])
+    if pruned_count:
+        print(f"only_path_contains নিয়মে আর না মেলায় পুরনো {pruned_count}টি খবর বাদ দেওয়া হলো।")
+
     existing_links = {item["link"] for item in existing}
 
     # গত ৩ দিনের মধ্যে প্রকাশিত আইটেমগুলোর সাথেই শুধু মিল খোঁজা হবে (পারফরম্যান্সের জন্য)

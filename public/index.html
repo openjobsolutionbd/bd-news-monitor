@@ -181,14 +181,41 @@ function escapeHtml(str){
 function highlight(title, keywords){
   // আগে পুরো টাইটেল escape করা হয়, যাতে ফিড থেকে আসা কোনো HTML/স্ক্রিপ্ট
   // ট্যাগ পেজে এক্সিকিউট না হয় (XSS প্রতিরোধ)। তারপর নিরাপদভাবে <mark> বসানো হয়।
-  let out = escapeHtml(title);
+  //
+  // নোট: matching সবসময় প্লেইন (escape করা) টাইটেলের ওপর করা হয়, ইতিমধ্যে
+  // <mark> বসানো আউটপুটের ওপর না -- তাই একটা কীওয়ার্ড আরেকটার সাবস্ট্রিং হলেও
+  // (যেমন "এআই" ও "আই") নেস্টেড/ভাঙা <mark> ট্যাগ তৈরি হয় না। প্রতিটা কীওয়ার্ডের
+  // জন্য প্রথমে non-overlapping রেঞ্জ (start, end) হিসাব করা হয়, পরে সবগুলো
+  // রেঞ্জ একসাথে সাজিয়ে একবারে <mark> বসানো হয়।
+  const escaped = escapeHtml(title);
+  const ranges = [];
   keywords.forEach(kw => {
     if(!kw) return;
     const safeKw = escapeHtml(kw);
-    const idx = out.indexOf(safeKw);
-    if(idx === -1) return;
-    out = out.slice(0, idx) + '<mark>' + safeKw + '</mark>' + out.slice(idx + safeKw.length);
+    if(!safeKw) return;
+    let searchFrom = 0;
+    while(true){
+      const idx = escaped.indexOf(safeKw, searchFrom);
+      if(idx === -1) break;
+      const end = idx + safeKw.length;
+      const overlaps = ranges.some(r => idx < r.end && end > r.start);
+      if(!overlaps) ranges.push({ start: idx, end });
+      searchFrom = end;
+    }
   });
+
+  if(ranges.length === 0) return escaped;
+
+  ranges.sort((a, b) => a.start - b.start);
+  let out = '';
+  let cursor = 0;
+  ranges.forEach(r => {
+    if(r.start < cursor) return; // ইতিমধ্যে কভার করা অংশের সাথে ওভারল্যাপ এড়ানো
+    out += escaped.slice(cursor, r.start);
+    out += '<mark>' + escaped.slice(r.start, r.end) + '</mark>';
+    cursor = r.end;
+  });
+  out += escaped.slice(cursor);
   return out;
 }
 

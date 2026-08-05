@@ -44,9 +44,18 @@ def load_config():
 
 
 def load_existing_news():
+    """
+    public/news.json থেকে পুরনো খবরের লিস্ট বের করে। ফাইলটা {"items": [...]}
+    আকারের object হিসেবে সেভ করা হয় (শুধু লিস্ট না) — তাই এখানে "items" key
+    থেকে লিস্টটা বের করে আনা হচ্ছে। ফাইল না থাকলে বা গঠন অপ্রত্যাশিত হলে খালি লিস্ট।
+    """
     if NEWS_PATH.exists():
         with open(NEWS_PATH, encoding="utf-8") as f:
-            return json.load(f)
+            data = json.load(f)
+        if isinstance(data, dict):
+            return data.get("items", [])
+        if isinstance(data, list):
+            return data
     return []
 
 

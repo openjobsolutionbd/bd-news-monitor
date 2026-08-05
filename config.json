@@ -2,7 +2,15 @@
   "feeds": [
     {
       "name": "প্রথম আলো",
-      "url": "https://www.prothomalo.com/feed/"
+      "url": "https://www.prothomalo.com/feed/",
+      "_comment_only_path_contains": "এই ফিডের বেলায় শুধু নিচের ৫টা সেকশন লিংকের খবরই রাখা হবে; প্রথম আলোর অন্য কোনো বিভাগের খবর (এমনকি কীওয়ার্ড মিললেও) বাদ যাবে।",
+      "only_path_contains": [
+        "/technology/science",
+        "/technology/cyberworld",
+        "/technology/artificial-intelligence",
+        "/technology/freelancing",
+        "/technology/advice"
+      ]
     },
     {
       "name": "জাগো নিউজ ২৪",

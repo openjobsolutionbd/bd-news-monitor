@@ -84,14 +84,24 @@ def is_tech_by_path(link, path_hints):
     return any(hint.lower() in link_l for hint in path_hints)
 
 
-def classify_entry(entry, path_hints, keywords):
+def classify_entry(entry, path_hints, keywords, only_path_contains=None):
     """
     একটা এন্ট্রি প্রযুক্তি-সংক্রান্ত কিনা যাচাই করে।
     রিটার্ন করে: (matched: bool, matched_by: "বিভাগ"|"কীওয়ার্ড"|None, matched_keywords: list)
+
+    only_path_contains দেওয়া থাকলে (নির্দিষ্ট কিছু ফিডের জন্য, যেমন প্রথম আলোর
+    বাছাই করা ৫টা সেকশন): শুধু ওই path-গুলোর সাথে লিংক মিললেই খবরটা রাখা হবে।
+    কীওয়ার্ড মেলা বা সাধারণ tech_path_hints এখানে ধর্তব্য না -- এই ফিড থেকে
+    শুধু ওই নির্দিষ্ট সেকশনগুলোর বাইরে আর কিছুই আসবে না।
     """
     title = entry.get("title", "").strip()
     summary = entry.get("summary", "") or entry.get("description", "")
     link = entry.get("link", "")
+
+    if only_path_contains:
+        if is_tech_by_path(link, only_path_contains):
+            return True, "বিভাগ", []
+        return False, None, []
 
     if is_tech_by_path(link, path_hints):
         return True, "বিভাগ", []
@@ -105,13 +115,14 @@ def classify_entry(entry, path_hints, keywords):
 
 def fetch_feed_items(feed_conf, path_hints, keywords):
     items = []
+    only_path_contains = feed_conf.get("only_path_contains")
     parsed = feedparser.parse(feed_conf["url"])
     if parsed.bozo and not parsed.entries:
         print(f"  [সতর্কতা] ফিড পড়া যায়নি: {feed_conf['name']} ({parsed.bozo_exception})", file=sys.stderr)
         return items
 
     for entry in parsed.entries:
-        matched, matched_by, hits = classify_entry(entry, path_hints, keywords)
+        matched, matched_by, hits = classify_entry(entry, path_hints, keywords, only_path_contains)
         if not matched:
             continue
 

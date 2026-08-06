@@ -4,6 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>খবরের খাতা — কীওয়ার্ড মনিটর</title>
+
+<!-- PWA: ম্যানিফেস্ট ও থিম -->
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#A5342A">
+<meta name="description" content="নির্বাচিত পত্রিকা থেকে বেছে আনা প্রযুক্তির খবর">
+
+<!-- আইকন -->
+<link rel="icon" type="image/png" sizes="32x32" href="./icons/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./icons/favicon-16.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+
+<!-- iOS-এ হোম-স্ক্রিনে যোগ করার জন্য প্রয়োজনীয় মেটা ট্যাগ -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="খবরের খাতা">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Tiro+Bangla:ital@0;1&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -261,6 +277,19 @@ fetch('./news.json?_=' + Date.now())
   .catch(err => {
     document.getElementById('main').innerHTML = '<div id="empty">news.json লোড করা যায়নি। ' + err + '</div>';
   });
+</script>
+
+<script>
+  // PWA: service worker রেজিস্ট্রেশন। এটা শুধু অ্যাপ শেল (HTML/আইকন)
+  // অফলাইনে কাজ করার জন্য -- news.json কখনো ক্যাশ থেকে দেখানো হয় না,
+  // sw.js নিজেই সেটা নিশ্চিত করে।
+  if('serviceWorker' in navigator){
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js').catch(err => {
+        console.warn('Service worker রেজিস্ট্রেশন ব্যর্থ হয়েছে:', err);
+      });
+    });
+  }
 </script>
 
 </body>

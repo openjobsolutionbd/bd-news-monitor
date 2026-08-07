@@ -235,48 +235,64 @@ function highlight(title, keywords){
   return out;
 }
 
-fetch('./news.json?_=' + Date.now())
-  .then(r => r.json())
-  .then(data => {
-    const main = document.getElementById('main');
-    const meta = document.getElementById('meta');
-    const items = data.items || [];
+// প্রতি ১ ঘণ্টা পর পর নতুন খবর অটো-লোড করার ইন্টারভাল (মিলিসেকেন্ডে)
+const NEWS_REFRESH_INTERVAL_MS = 60 * 60 * 1000;
 
-    meta.innerHTML =
-      '<span>হালনাগাদ: ' + (data.last_updated ? timeAgo(data.last_updated) : '—') + '</span>' +
-      '<span>মোট ' + items.length + 'টি খবর</span>';
+function loadNews(){
+  fetch('./news.json?_=' + Date.now())
+    .then(r => r.json())
+    .then(data => {
+      const main = document.getElementById('main');
+      const meta = document.getElementById('meta');
+      const items = data.items || [];
 
-    if(items.length === 0){
-      main.innerHTML = '<div id="empty">এখনও কোনো মিলে যাওয়া খবর পাওয়া যায়নি। কনফিগারেশনে কীওয়ার্ড ঠিক আছে কিনা দেখুন।</div>';
-      return;
-    }
+      meta.innerHTML =
+        '<span>হালনাগাদ: ' + (data.last_updated ? timeAgo(data.last_updated) : '—') + '</span>' +
+        '<span>মোট ' + items.length + 'টি খবর</span>';
 
-    let html = '';
-    let lastDay = '';
-    items.forEach(item => {
-      const day = dayLabel(item.published);
-      if(day !== lastDay){
-        html += '<div class="day-heading">' + day + '</div>';
-        lastDay = day;
+      if(items.length === 0){
+        main.innerHTML = '<div id="empty">এখনও কোনো মিলে যাওয়া খবর পাওয়া যায়নি। কনফিগারেশনে কীওয়ার্ড ঠিক আছে কিনা দেখুন।</div>';
+        return;
       }
-      const tagRow = item.matched_by === 'বিভাগ'
-        ? '<span class="kw kw-section">প্রযুক্তি বিভাগ</span>'
-        : item.matched_keywords.map(k => '<span class="kw">' + escapeHtml(k) + '</span>').join('');
-      const safeSource = escapeHtml(item.source);
-      const safeLink = escapeHtml(item.link);
-      const alsoFrom = (item.also_from || []).map(escapeHtml);
-      const sourceLabel = safeSource + (alsoFrom.length ? ' <span class="also-from">+' + alsoFrom.length + ' (' + alsoFrom.join(', ') + ')</span>' : '');
-      html += '<article class="clip">' +
-        '<div class="clip-top"><span class="source">' + sourceLabel + '</span><span>' + timeAgo(item.published) + '</span></div>' +
-        '<h2><a href="' + safeLink + '" target="_blank" rel="noopener">' + highlight(item.title, item.matched_keywords) + '</a></h2>' +
-        '<div class="kw-row">' + tagRow + '</div>' +
-        '</article>';
+
+      let html = '';
+      let lastDay = '';
+      items.forEach(item => {
+        const day = dayLabel(item.published);
+        if(day !== lastDay){
+          html += '<div class="day-heading">' + day + '</div>';
+          lastDay = day;
+        }
+        const tagRow = item.matched_by === 'বিভাগ'
+          ? '<span class="kw kw-section">প্রযুক্তি বিভাগ</span>'
+          : item.matched_keywords.map(k => '<span class="kw">' + escapeHtml(k) + '</span>').join('');
+        const safeSource = escapeHtml(item.source);
+        const safeLink = escapeHtml(item.link);
+        const alsoFrom = (item.also_from || []).map(escapeHtml);
+        const sourceLabel = safeSource + (alsoFrom.length ? ' <span class="also-from">+' + alsoFrom.length + ' (' + alsoFrom.join(', ') + ')</span>' : '');
+        html += '<article class="clip">' +
+          '<div class="clip-top"><span class="source">' + sourceLabel + '</span><span>' + timeAgo(item.published) + '</span></div>' +
+          '<h2><a href="' + safeLink + '" target="_blank" rel="noopener">' + highlight(item.title, item.matched_keywords) + '</a></h2>' +
+          '<div class="kw-row">' + tagRow + '</div>' +
+          '</article>';
+      });
+      main.innerHTML = html;
+    })
+    .catch(err => {
+      document.getElementById('main').innerHTML = '<div id="empty">news.json লোড করা যায়নি। ' + err + '</div>';
     });
-    main.innerHTML = html;
-  })
-  .catch(err => {
-    document.getElementById('main').innerHTML = '<div id="empty">news.json লোড করা যায়নি। ' + err + '</div>';
-  });
+}
+
+loadNews();
+setInterval(loadNews, NEWS_REFRESH_INTERVAL_MS);
+
+// ট্যাব ব্যাকগ্রাউন্ড থেকে ফিরে এলে সাথে সাথে একবার রিফ্রেশ করা,
+// যাতে setInterval নিজে থেকে চালু হওয়ার জন্য অপেক্ষা করতে না হয়।
+document.addEventListener('visibilitychange', () => {
+  if(document.visibilityState === 'visible'){
+    loadNews();
+  }
+});
 </script>
 
 <script>

@@ -1,0 +1,4 @@
+/* Self-hosted Bengali font — no external CDN dependency (offline-safe) */
+
+@font-face{font-family:'Tiro Bangla';font-style:normal;font-weight:400;font-display:swap;src:url('./fonts/tiro-bangla-400-normal.woff2') format('woff2');}
+@font-face{font-family:'Tiro Bangla';font-style:italic;font-weight:400;font-display:swap;src:url('./fonts/tiro-bangla-400-italic.woff2') format('woff2');}

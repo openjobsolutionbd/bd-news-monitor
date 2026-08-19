@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-19T13:46:31.920353+00:00",
+  "last_updated": "2026-08-19T14:36:37.890716+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,15 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "এআই নিয়ে গবেষণা বন্ধের আহ্বান, কেন...",
+      "link": "https://www.prothomalo.com/technology/artificial-intelligence/0zz3p7p23x",
+      "published": "2026-08-19T13:41:43+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "কিশোর–কিশোরীদের জন্য চ্যাটজিপিটির নতুন সংস্করণ চালু করল ওপেনএআই",
@@ -656,41 +665,6 @@
       "matched_by": "কীওয়ার্ড",
       "matched_keywords": [
         "এআই"
-      ],
-      "also_from": []
-    },
-    {
-      "source": "জাগো নিউজ ২৪",
-      "title": "‘বাংলাদেশ ফার্স্ট’ নীতি বাস্তবায়নের পথে বহুমুখী চ্যালেঞ্জ রয়েছে",
-      "link": "https://www.jagonews24.com/national/news/1144540",
-      "published": "2026-08-05T14:30:20+00:00",
-      "matched_by": "কীওয়ার্ড",
-      "matched_keywords": [
-        "কৃত্রিম বুদ্ধিমত্তা",
-        "সাইবার"
-      ],
-      "also_from": []
-    },
-    {
-      "source": "জাগো নিউজ ২৪",
-      "title": "রিপাবলিক বাংলা ছাড়লেন আলোচিত সাংবাদিক ময়ূখ রঞ্জন",
-      "link": "https://www.jagonews24.com/international/news/1144536",
-      "published": "2026-08-05T14:17:40+00:00",
-      "matched_by": "কীওয়ার্ড",
-      "matched_keywords": [
-        "ফেসবুক"
-      ],
-      "also_from": []
-    },
-    {
-      "source": "জাগো নিউজ ২৪",
-      "title": "ভোলায় স্কুলছাত্রীকে সংঘবদ্ধ ধর্ষণ-ভিডিও ধারণ, ৩ কিশোর গ্রেফতার",
-      "link": "https://www.jagonews24.com/country/news/1144531",
-      "published": "2026-08-05T13:53:50+00:00",
-      "matched_by": "কীওয়ার্ড",
-      "matched_keywords": [
-        "ইন্টারনেট",
-        "ফেসবুক"
       ],
       "also_from": []
     }

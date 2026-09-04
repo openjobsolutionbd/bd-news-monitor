@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-09-04T03:37:26.800468+00:00",
+  "last_updated": "2026-09-04T08:38:01.465508+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,15 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "বাংলাদেশের আকাশে ১৫ সেপ্টেম্বর পর্যন্ত যেসব চমক দেখা যাবে",
+      "link": "https://www.prothomalo.com/technology/science/brk9n8vzam",
+      "published": "2026-09-04T07:54:37+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "চ্যাটজিপিটিতে বিভ্রাট, বিপাকে বিভিন্ন সেবা",
@@ -400,24 +409,6 @@
       "title": "শিক্ষার্থীদের জন্য এক বছর বিনা মূল্যে গুগল এআই প্লাস ব্যবহারের সুযোগ",
       "link": "https://www.prothomalo.com/technology/artificial-intelligence/8oqa9l0mq5",
       "published": "2026-08-21T13:33:20+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "মঙ্গল গ্রহে প্রাচীন সভ্যতা থাকার দাবি ঘিরে নতুন বিতর্ক",
-      "link": "https://www.prothomalo.com/technology/science/ibhqjz7w3o",
-      "published": "2026-08-21T06:00:00+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "নিরাপত্তা উদ্বেগে এআই মডেলের প্রশিক্ষণ সাময়িক বন্ধ করল ওপেনএআই",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/bi70gg2qe9",
-      "published": "2026-08-21T05:00:00+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []

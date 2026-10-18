@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-18T05:31:41.879166+00:00",
+  "last_updated": "2026-10-18T10:36:52.496803+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,15 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "এআইকে প্রশ্ন করার কৌশল",
+      "link": "https://www.prothomalo.com/technology/artificial-intelligence/5py06kz7ec",
+      "published": "2026-10-18T08:47:22+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "মেটার গিটহাবে হ্যাকারদের অনুপ্রবেশ, ১৫০০ ব্যক্তির তথ্য ফাঁস",
@@ -355,24 +364,6 @@
       "title": "২১৭ বছর পর নেপোলিয়নের রহস্যময় চিঠির তথ্য উন্মোচন করল এআই",
       "link": "https://www.prothomalo.com/technology/artificial-intelligence/4lsdpysady",
       "published": "2026-10-04T12:42:28+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "সোলার প্যানেলের নিচে উৎপাদিত হবে ফসল",
-      "link": "https://www.prothomalo.com/technology/science/aj7dfujtt0",
-      "published": "2026-10-04T08:30:00+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "প্রশান্ত মহাসাগরের তলদেশে আবিষ্কৃত ভাইরাসের ৯৯ শতাংশই বিজ্ঞানীদের অজানা",
-      "link": "https://www.prothomalo.com/technology/science/w7b072xnb0",
-      "published": "2026-10-04T08:15:33+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []

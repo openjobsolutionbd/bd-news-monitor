@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-10-25T01:00:34.739682+00:00",
+  "last_updated": "2026-10-25T07:23:33.006854+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,15 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "এআইয়ের কারণে বাড়ছে সফটওয়্যারের নিরাপত্তাঝুঁকি, বড় সংকটের আশঙ্কা",
+      "link": "https://www.prothomalo.com/technology/cyberworld/khyaupl8vd",
+      "published": "2026-10-25T05:00:00+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "এআইয়ের সহায়তায় লেখা বইয়ের জন্য চালু হলো নতুন সাহিত্য পুরস্কার",
@@ -409,15 +418,6 @@
       "title": "ঢাকায় উদ্যোক্তা ও ব্যবসায়ীদের নিয়ে এআই সামিট অনুষ্ঠিত",
       "link": "https://www.prothomalo.com/technology/artificial-intelligence/gp1h63bynk",
       "published": "2026-10-11T11:31:08+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "কোডিং ছাড়াই এআই দিয়ে গেম তৈরি করা যাবে গুগলের প্লেগ্রাউন্ড প্ল্যাটফর্মে",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/hm21ucdlnm",
-      "published": "2026-10-11T05:00:00+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []

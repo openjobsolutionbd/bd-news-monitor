@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-08T00:16:43.696918+00:00",
+  "last_updated": "2026-11-08T06:59:39.696669+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,15 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "মরুভূমিতে মিলেছে মঙ্গল গ্রহের প্রাচীন উল্কা",
+      "link": "https://www.prothomalo.com/technology/science/314mxeqjek",
+      "published": "2026-11-08T05:00:00+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "ব্লাড ব্যাংকে হ্যাকারদের সাইবার আক্রমণ",
@@ -337,15 +346,6 @@
       "title": "কৃষকের হাতে এআই, মাঠের নতুন সহায়ক",
       "link": "https://www.prothomalo.com/technology/artificial-intelligence/t37p361wzi",
       "published": "2026-10-25T12:00:00+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "এআইয়ের কারণে বাড়ছে সফটওয়্যারের নিরাপত্তাঝুঁকি, বড় সংকটের আশঙ্কা",
-      "link": "https://www.prothomalo.com/technology/cyberworld/khyaupl8vd",
-      "published": "2026-10-25T05:00:00+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []

@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-10T00:00:11.473585+00:00",
+  "last_updated": "2026-11-10T08:05:09.890341+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,24 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "ম্যামোগ্রামে এআই, চিকিৎসকের ‘দ্বিতীয় চোখ’",
+      "link": "https://www.prothomalo.com/technology/artificial-intelligence/x6qhknz16v",
+      "published": "2026-11-10T07:45:38+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
+    {
+      "source": "প্রথম আলো",
+      "title": "হোয়াটসঅ্যাপে কেউ আপনাকে ব্লক করেছে কি না, বুঝবেন যেভাবে",
+      "link": "https://www.prothomalo.com/technology/advice/57whix2g3q",
+      "published": "2026-11-10T06:00:00+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "সাংবাদিক ছাড়াই সংবাদের সাইট, এও কি এআই",
@@ -265,33 +283,6 @@
       "title": "কুকি চুরি করে যেভাবে পাসওয়ার্ড ছাড়াই অ্যাকাউন্টের নিয়ন্ত্রণ নেয় প্রতারকেরা",
       "link": "https://www.prothomalo.com/technology/cyberworld/as57bco2m8",
       "published": "2026-10-27T11:36:08+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "এআই শেখার ৭ দিনের চ্যালেঞ্জ",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/f6bkf0xr9v",
-      "published": "2026-10-27T07:00:00+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "পিএইচপি কী, এই ত্রুটিতে কী হয়?",
-      "link": "https://www.prothomalo.com/technology/cyberworld/upd7eqli5q",
-      "published": "2026-10-27T06:30:55+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "মানুষের মতো স্বাভাবিক ভঙ্গিতে কথা বলতে পারে নতুন এআই মডেল ডেসা",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/cbsdr0p6d4",
-      "published": "2026-10-27T05:00:00+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []

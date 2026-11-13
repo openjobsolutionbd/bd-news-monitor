@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-12T23:29:16.506487+00:00",
+  "last_updated": "2026-11-13T05:44:21.313626+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,24 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "এআই ডিটেক্টরের ভুল অভিযোগ",
+      "link": "https://www.prothomalo.com/technology/artificial-intelligence/f2r5d7yict",
+      "published": "2026-11-13T03:58:16+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
+    {
+      "source": "প্রথম আলো",
+      "title": "কৃত্রিম বুদ্ধিমত্তায় সার্বভৌমত্ব: নিজস্ব বাংলা এলএলএম ও কেন্দ্রীয় অবকাঠামোর কৌশলগত রূপরেখা",
+      "link": "https://www.prothomalo.com/technology/artificial-intelligence/eg1l569ah2",
+      "published": "2026-11-13T02:00:00+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "এআই খেলনা শিশুর নতুন বন্ধু না ঝুঁকি",

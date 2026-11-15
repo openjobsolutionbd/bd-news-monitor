@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-15T01:34:04.823626+00:00",
+  "last_updated": "2026-11-15T08:56:39.780374+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,15 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "জুম সফটওয়্যারের নিরাপত্তা নিয়ে শঙ্কা, দূর থেকেই নেওয়া যায় কম্পিউটারের নিয়ন্ত্রণ",
+      "link": "https://www.prothomalo.com/technology/cyberworld/50a11rrkel",
+      "published": "2026-11-15T05:00:00+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "এআই দিয়ে লেখা ভুয়া রিভিউ চিনবেন কীভাবে",
@@ -247,24 +256,6 @@
       "title": "ফর্মুলা ওয়ান রেসিং প্রতিযোগিতার জয়-পরাজয়েও ভূমিকা রাখছে এআই",
       "link": "https://www.prothomalo.com/technology/artificial-intelligence/9qu43x3r2g",
       "published": "2026-11-02T05:00:00+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "এআই-স্মার্ট স্পিকার কি সবই শোনে?",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/w8azkgxcih",
-      "published": "2026-11-01T08:26:37+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "এআই সাবস্ক্রিপশন, বিনা মূল্যের নাকি পেইড, কোনটা ঠিক",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/ptof5y0t94",
-      "published": "2026-11-01T05:00:00+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []

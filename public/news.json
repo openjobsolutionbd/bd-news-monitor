@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-11-20T02:05:47.528367+00:00",
+  "last_updated": "2026-11-20T11:03:10.165679+00:00",
   "keywords": [
     "প্রযুক্তি",
     "সফটওয়্যার",
@@ -17,6 +17,24 @@
     "চ্যাটজিপিটি"
   ],
   "items": [
+    {
+      "source": "প্রথম আলো",
+      "title": "যুক্তরাষ্ট্রে সাইবার হামলায় ব্যাংকসহ ভিসা ও মাস্টারকার্ড ব্যবহারকারীদের তথ্য চুরি",
+      "link": "https://www.prothomalo.com/technology/cyberworld/f4jp2mohtz",
+      "published": "2026-11-20T08:49:28+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
+    {
+      "source": "প্রথম আলো",
+      "title": "জটিল কাজ দ্রুত করতে নতুন এআই মডেল আনল গুগল",
+      "link": "https://www.prothomalo.com/technology/artificial-intelligence/3vpjisii2b",
+      "published": "2026-11-20T07:48:57+00:00",
+      "matched_by": "বিভাগ",
+      "matched_keywords": [],
+      "also_from": []
+    },
     {
       "source": "প্রথম আলো",
       "title": "ক্রোম ব্রাউজারে গুরুতর নিরাপত্তাত্রুটি, নিরাপদ থাকতে যা করতে হবে",
@@ -238,33 +256,6 @@
       "title": "পৃথিবীর বায়ুমণ্ডলে ধ্বংস হয়ে গেল নাসার সুইফট স্পেস টেলিস্কোপ",
       "link": "https://www.prothomalo.com/technology/science/gx1g7z6pfp",
       "published": "2026-11-06T13:49:03+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "চ্যাটজিপিটির সঙ্গে কথা বলে জানা যাবে নিজেদের আর্থিক লেনদেনের তথ্য",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/fgzmhuffp9",
-      "published": "2026-11-06T08:59:00+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "মঙ্গল গ্রহের চরম পরিবেশে টিকে থাকতে সক্ষম অণুজীবের সন্ধান",
-      "link": "https://www.prothomalo.com/technology/science/pihp432l6y",
-      "published": "2026-11-06T08:18:50+00:00",
-      "matched_by": "বিভাগ",
-      "matched_keywords": [],
-      "also_from": []
-    },
-    {
-      "source": "প্রথম আলো",
-      "title": "এআই উদ্ভাবন না করলেই হয়তো ভালো হতো: জিওফ্রি হিন্টন",
-      "link": "https://www.prothomalo.com/technology/artificial-intelligence/9iqmesx5wa",
-      "published": "2026-11-06T08:06:24+00:00",
       "matched_by": "বিভাগ",
       "matched_keywords": [],
       "also_from": []
